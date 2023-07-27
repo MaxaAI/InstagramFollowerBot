@@ -8,10 +8,10 @@ from selenium import webdriver
 import time
 
 
-CHROME_DRIVER_PATH = "Your chromedriverpath"
-SIMILAR_ACCOUNT = 'instagram account you want to get the follows from'
-USERNAME = 'Your Username'
-PASSWORD = 'Your Password'
+CHROME_DRIVER_PATH = "C:/Users/Development/chromedriver.exe"
+SIMILAR_ACCOUNT = 'openaidalle'
+USERNAME = 'its_maxi04_prvt'
+PASSWORD = '0509Alina'
 driver = webdriver.Chrome()
 
 class InstaFollower:
@@ -47,7 +47,7 @@ class InstaFollower:
         time.sleep(3)
 
         try:
-            followers = WebDriverWait(self.driver, 20).until(
+            followers = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, 'followers'))
             )
             followers.click()
@@ -57,7 +57,7 @@ class InstaFollower:
 
     def follow(self):
         # Find all the follow buttons in the modal
-        follow_button = self.driver.find_elements(by=By.CLASS_NAME, value='_acan_acap_acas_aj1-')
+        follow_button = self.driver.find_elements(By.XPATH, value="//*[text()='Follow']")
         for button in follow_button:
             button.click()
             time.sleep(2)  # Wait for a while
@@ -67,4 +67,3 @@ bot = InstaFollower(CHROME_DRIVER_PATH)
 bot.login()
 bot.find_followers()
 bot.follow()
-time.sleep(100)
