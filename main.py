@@ -8,10 +8,10 @@ from selenium import webdriver
 import time
 
 
-CHROME_DRIVER_PATH = "C:/Users/Development/chromedriver.exe"
-SIMILAR_ACCOUNT = 'openaidalle'
-USERNAME = 'its_maxi04_prvt'
-PASSWORD = '0509Alina'
+CHROME_DRIVER_PATH = "FILE Path"
+SIMILAR_ACCOUNT = 'Account you want to follow the follower from'
+USERNAME = 'Your Username'
+PASSWORD = 'Your Password'
 driver = webdriver.Chrome()
 
 class InstaFollower:
